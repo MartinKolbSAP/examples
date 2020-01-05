@@ -2,13 +2,8 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: oneshot
-  labels:
-    chapter: jobs
 spec:
   template:
-    metadata:
-      labels:
-        chapter: jobs
     spec:
       containers:
       - name: kuard
@@ -17,6 +12,5 @@ spec:
         args:
         - "--keygen-enable"
         - "--keygen-exit-on-complete"
-        - "--keygen-exit-code=1"
-        - "--keygen-num-to-gen=3"
+        - "--keygen-num-to-gen=10"
       restartPolicy: OnFailure
