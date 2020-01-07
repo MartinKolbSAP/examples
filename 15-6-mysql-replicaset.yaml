@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: mysql
@@ -27,7 +27,7 @@ spec:
         # but we're using them here for brevity in the example.
         # See Chapter 11 for better options.
         - name: MYSQL_ROOT_PASSWORD
-          value: some-password-here
+          value: My-password-here-123#
         livenessProbe:
           tcpSocket:
             port: 3306
